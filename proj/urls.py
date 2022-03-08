@@ -21,7 +21,7 @@ urlpatterns = [
     path('', homeview, name='home'),
     path('profile/', profile),
     path('fuelQuote/', fuelQuote),
-    path('fuelQuoteHistory/', fuelQuoteHistory),
+    path('History/', fuelQuoteHistory),
     path('login/', login),
     path('register/', register),
     path('clientpage/', clienthome),

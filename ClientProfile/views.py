@@ -21,7 +21,7 @@ def fuelQuote(request, *args, **kwargs):
 
 def fuelQuoteHistory(request, *args, **kwargs):
     #return HttpResponse("<h1>Fuel Quote History</h1>")
-    return render(request, "fuelquote_history.html", {})
+    return render(request, "history.html", {})
 
 
 def login(request, *args, **kwargs):
