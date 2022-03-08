@@ -19,13 +19,18 @@ def fuelQuote(request, *args, **kwargs):
     return render(request, "fuelquote.html", {})
 
 
-def fuelQuoteHistory(request, *args, **kwargs):
+def history(request, *args, **kwargs):
     #return HttpResponse("<h1>Fuel Quote History</h1>")
     return render(request, "history.html", {})
 
 
 def login(request, *args, **kwargs):
-    return HttpResponse("<h1>Login Page</h1>")
+    #return HttpResponse("<h1>Login Page</h1>")
+    return render(request, "login.html", {})
+
 
 def register(request, *args, **kwargs):
-    return HttpResponse("<h1>Register Page</h1>")
+    return render(request, "register.html", {})
+
+def guestpage(request, *args, **kwargs):
+    return render(request, "guessmode.html", {})
