@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ClientProfile.views import homeview,guestpage, clienthome, profile, fuelQuote, history, login, register
+from . import views
 
 urlpatterns = [
     path('', homeview, name='home'),

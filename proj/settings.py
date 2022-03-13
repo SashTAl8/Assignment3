@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         #Path(__file__).resolve().parent.parent
-        'DIRS': [os.path.join(BASE_DIR, "temp")],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
 
         'APP_DIRS': True,
         'OPTIONS': {
@@ -83,6 +83,20 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': '***',
+#         'USER': '***',
+#         'PASSWORD': '***',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
+# pymysql.version_info = (1, 4, 2, "final", 0)
+# pymysql.install_as_MySQLdb()
 
 
 # Password validation
