@@ -1,16 +1,13 @@
-{% extends 'base.html' %}
-{% block content %}
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
-
-	{% load static %}
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta >
 	<link rel="stylesheet" href= {% static "https://fonts.googleapis.com/css?family=Font+Name" %}/>
-	<link rel="stylesheet" type="text/css" href= {% static   "fuelquote.css" %}/>
+	<link rel="stylesheet" type="text/css" href= {% static "fuelquote.css" %}/>
 	<title>Project ROU</title>
 </head>
 <body>
@@ -20,8 +17,8 @@
 	<header id="top-bar" class="container has-two-col">
 
 		<h1>
-			<a href= {% static "#" %}>
-				<img src= {% static "image/logo rou.png" % }>
+			<a href= "#">
+				<img src= {% static "image/logo rou.png"%}>
 			</a>
 		</h1>
 
@@ -29,17 +26,17 @@
 		<div class="inline">
 
 			<ul id="menu" class="inline-list">
-				<li><a href= {% static "#" %}>Fuel Quote</a></li>
-				<li><a href= {% static "#" %}>My Profile</a></li>
-				<li><a href= {% static "#" %}>Logout</a></li>
+				<li><a href= #>Fuel Quote</a></li>
+				<li><a href= #>My Profile</a></li>
+				<li><a href= #>Logout</a></li>
 
 			</ul>
 
 			<ul id="social">
-				<li><a href= "#"><img src= {% static "image/social/fb.png" %}></a></li>
-				<li><a href=  "#"><img src= {% static "image/social/tw.png" %}></a></li>
-				<li><a href= "#"><img src= {% static "image/social/youtube.png" %}></a></li>
-				<li><a href= "#"><img src= {% static "image/social/instagram.png" %}></a></li>
+				<li><a href="#"> <img src= {% static "image/social/fb.png" %} ></a></li>
+				<li><a href="#"> <img src= {% static "image/social/tw.png" %}></a></li>
+				<li><a href= "#"> <img src= {% static "image/social/youtube.png" %}></a></li>
+				<li><a href= "#"> <img src= {% static "image/social/instagram.png" %}></a></li>
 			</ul>
 
 		</div>
@@ -52,7 +49,7 @@
 
 		<div id="fuel">
 
-			<form id="fuel-form">
+			{% comment %} <form id="fuel-form">
 
 				<div id="form-name">
 					<h2>Fuel Quote</h2>
@@ -96,13 +93,20 @@
 
 				</div>
 	
+			</form> {% endcomment %}
+
+			<form>
+				{% csrf_token %} 
+				{{ form.as_p }}
+
+				<input type="submit" value="Submit" class="btn btn-secondary" />
 			</form>
+
 
 
 		</div>
 
-
-	</div>	
+	</div>
 
 </div>
 
@@ -114,7 +118,7 @@
 		<div id="subcribe">
 			<h1>
 
-				<img src="image/logo rou.png">
+				<img src= {% static "image/logo rou.png" %}>
 			</h1>
 
 			<p>Fectetur adipisicing elit, sed do eius mod tempor Lorem ipsum dolor sit amet, con sectetur adipisicing elitt ut labore.</p>
@@ -123,7 +127,7 @@
 		<div id="about">
 			<h2>About</h2>
 			<ul>
-				<li><a href= {% static "#" %}>Abou Us</a></li>
+				<li><a href= {% static "#" %}>About Us</a></li>
 				<li><a href= {% static "#" %}>Service</a></li>
 				<li><a href= {% static "#" %}>Our Story</a></li>
 				<li><a href= {% static "#" %}>Success</a></li>
@@ -146,19 +150,19 @@
 			<ul>
 				<li>
 					<a href= {% static "#" %}>
-						<img src="image/footer/address.png">
+						<img src={% static "image/footer/address.png" %}>
 						<span id='content1'>University of Houston</span>
 						<span id='content2'>Houston, Texas 77204</span>
 					</a>
 				</li>
 				<li>
 					<a href= {% static "#" %}>
-						<img src="image/footer/mail.png">uh@cougarnet.uh.edu
+						<img src= {% static "image/footer/mail.png" %}>uh@cougarnet.uh.edu
 					</a>
 				</li>
 				<li>
 					<a href= {% static "#" %}>
-						<img src="image/footer/phone.png">(713) 743-2255
+						<img src={% static "image/footer/phone.png" %}>(713) 743-2255
 					</a>
 				</li>
 
@@ -170,10 +174,10 @@
 	<div id="follow-us" class="container inline">
 		<h2>Follow Us</h2>
 		<ul id="social">
-				<li><a href= {% static "#" %}><img src="image/social/fb.png"></a></li>
-				<li><a href= {% static "#" %}><img src="image/social/tw.png"></a></li>
-				<li><a href= {% static "#" %}><img src="image/social/youtube.png"></a></li>
-				<li><a href= {% static "#" %}><img src="image/social/instagram.png"></a></li>
+				<li><a href= {% static "#" %}><img src={% static "image/social/fb.png" %}></a></li>
+				<li><a href= {% static "#" %}><img src={% static "image/social/tw.png" %}></a></li>
+				<li><a href= {% static "#" %}><img src={% static "image/social/youtube.png" %}></a></li>
+				<li><a href= {% static "#" %}><img src={% static "image/social/instagram.png" %}></a></li>
 		</ul>
 	</div>
 </footer>
@@ -181,4 +185,3 @@
 
 </body>
 </html>
-{% endblock %}

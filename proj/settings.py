@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+import pymysql
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -77,26 +78,20 @@ WSGI_APPLICATION = 'proj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fuelquotes', 
+        'USER': 'root',
+        'PASSWORD': 'Noor2002', # remember to put your password
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': '***',
-#         'USER': '***',
-#         'PASSWORD': '***',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
-#     }
-# }
-
-# pymysql.version_info = (1, 4, 2, "final", 0)
-# pymysql.install_as_MySQLdb()
+pymysql.version_info = (1, 4, 2, "final", 0) # be sure to import pymysql
+pymysql.install_as_MySQLdb()
 
 
 # Password validation

@@ -15,18 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ClientProfile.views import homeview,guestpage, clienthome, profile, fuelQuote, history, login, register
+#from ClientProfile.views import homeview,guestpage, clienthome, profile, fuelQuote, history, login, register
 from . import views
 
 urlpatterns = [
-    path('', homeview, name='home'),
-    path('clienthome/', clienthome),
-    path('fuelQuote/', fuelQuote),
-    path('guestpage/', guestpage),
-    path('history/', history),
-    path('login/', login),
-    path('profile/', profile),
-    path('register/', register),
+    path('', views.homeview, name='home'),
+    path('clienthome/', views.clienthome),
+    path('fuelQuote/', views.fuelQuote),
+    path('guestpage/', views.guestpage),
+    path('history/', views.history),
+    path('login/', views.login),
+    path('profile/', views.profile),
+    path('register/', views.register),
     path('admin/', admin.site.urls),
     
 ]
